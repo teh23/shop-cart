@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { createContext, FormEvent, useContext, useReducer, useState } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import useSWR from "swr";
 import {
     BrowserRouter,
@@ -9,17 +8,18 @@ import {
 import Category from "./components/Category";
 import { fetcher } from "./lib/fetcher";
 import Header from "./components/Header";
-import Product, { IProduct } from "./components/Product";
+import { IProduct } from "./components/Product";
+import Card from "./components/Card";
 
 
-interface ICard {
+export interface ICard {
     product: IProduct
     count: number
 
 }
 
 interface IAction {
-    type: "ADD",
+    type: "ADD" | "REMOVE" | "CHANGE",
     payload: {
         product: IProduct
         count: number
@@ -42,7 +42,7 @@ function App() {
 
                     return [...state.map((val) => {
                         if (val.product.id === action.payload.product.id) {
-                            console.log(val)
+
                             val.count++
 
                         }
@@ -51,14 +51,26 @@ function App() {
                     })]
                 }
                 return [...state, { product: action.payload.product, count: action.payload.count }]
+            case 'REMOVE':
+                return [...state.filter(({ product }) => product.id !== action.payload.product.id)]
+            case 'CHANGE':
+
+                return [...state.map((val) => {
+                    if (val.product.id === action.payload.product.id) {
+                        val.count = action.payload.count
+                    }
+                    return val
+
+                })]
+
             default:
                 return []
         }
     }, [])
 
-    const { data, error } = useSWR<string[]>('https://fakestoreapi.com/products/categories', fetcher)
+    const { data } = useSWR<string[]>('https://fakestoreapi.com/products/categories', fetcher)
     if (!data) return <>loading</>
-    console.log(card)
+
     return (
         <>
             <cardCtx.Provider value={{ card, dispatch }}>
@@ -73,7 +85,7 @@ function App() {
 
                     <Route path='/:category' component={Category} />
                 </BrowserRouter>
-                asd
+                <Card />
             </cardCtx.Provider >
         </>
     )
