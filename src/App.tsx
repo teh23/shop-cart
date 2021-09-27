@@ -83,7 +83,7 @@ function App() {
                         })}
                     </Header>
 
-                    <Route path='/:category' component={Category} />
+                    <Route path='/:site/:category' component={Category} /> {/*temporary for production */}
                 </BrowserRouter>
                 <Card />
             </cardCtx.Provider >
