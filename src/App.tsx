@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 import useSWR from "swr";
 import {
-    BrowserRouter,
+    HashRouter,
     Route,
     Link
 } from "react-router-dom";
@@ -74,7 +74,7 @@ function App() {
     return (
         <>
             <cardCtx.Provider value={{ card, dispatch }}>
-                <BrowserRouter>
+                <HashRouter>
                     <Header>
                         {data.map((category, idx) => {
                             return (
@@ -83,8 +83,8 @@ function App() {
                         })}
                     </Header>
 
-                    <Route path='/:site/:category' component={Category} /> {/*temporary for production */}
-                </BrowserRouter>
+                    <Route path='/:category' component={Category} /> {/*temporary for production */}
+                </HashRouter>
                 <Card />
             </cardCtx.Provider >
         </>
