@@ -1,7 +1,6 @@
 import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import useSWR from 'swr'
-import { useCard } from '../App'
 import { fetcher } from '../lib/fetcher'
 import Product, { IProduct } from './Product'
 
@@ -13,7 +12,7 @@ interface IParams {
 const Category = ({ match }: RouteComponentProps<IParams>) => {
     const category = match.params.category
 
-    const { data, error } = useSWR(`https://fakestoreapi.com/products/category/${category}`, fetcher)
+    const { data } = useSWR(`https://fakestoreapi.com/products/category/${category}`, fetcher)
     if (!data) return <p>loading</p>
 
     return (

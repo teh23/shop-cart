@@ -25,7 +25,7 @@ const Product = ({
     rating,
     title,
 }: IProduct) => {
-    const { card, dispatch } = useCard()
+    const { dispatch } = useCard()
     const product = {
         id: id,
         category: category,
