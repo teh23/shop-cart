@@ -2,7 +2,8 @@ import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import useSWR from 'swr'
 import { fetcher } from '../lib/fetcher'
-import Product, { IProduct } from './Product'
+import { IProduct } from './Interface'
+import Product from './Product'
 
 interface IParams {
     category: string
