@@ -1,6 +1,6 @@
-import { IAction, ICard } from "../Interface";
+import { IAction, ICart } from "../Interface";
 
-const Reducer = (state: ICard[], action: IAction) => {
+const Reducer = (state: ICart[], action: IAction) => {
     switch (action.type) {
         case "ADD":
             if (

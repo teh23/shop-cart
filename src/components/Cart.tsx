@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { ICard, IProduct } from './Interface'
-import { useCard } from './Logic/CardProvider'
+import { ICart, IProduct } from './Interface'
+import { useCart } from './Logic/CartProvider'
 
 
 const Card = () => {
-    const { card, dispatch } = useCard()
+    const { card, dispatch } = useCart()
 
 
     const remove = (product: IProduct) => {
@@ -16,7 +16,7 @@ const Card = () => {
             }
         })
     }
-    const changeCount = (product: ICard, e: React.ChangeEvent<HTMLInputElement>) => {
+    const changeCount = (product: ICart, e: React.ChangeEvent<HTMLInputElement>) => {
 
         dispatch({
             type: "CHANGE", payload: {

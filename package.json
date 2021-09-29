@@ -2,7 +2,7 @@
     "name": "todo-state",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://andrzejfranek.me/shop-card/",
+    "homepage": "https://andrzejfranek.me/shop-cart/",
     "dependencies": {
         "@craco/craco": "^6.3.0",
         "@testing-library/jest-dom": "^5.14.1",

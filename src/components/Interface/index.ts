@@ -11,7 +11,7 @@ export interface IProduct {
     title: string;
 }
 
-export interface ICard {
+export interface ICart {
     product: IProduct;
     count: number;
 }
@@ -23,6 +23,6 @@ export interface IAction {
     };
 }
 export interface ctx {
-    card: ICard[];
+    card: ICart[];
     dispatch: React.Dispatch<IAction>;
 }

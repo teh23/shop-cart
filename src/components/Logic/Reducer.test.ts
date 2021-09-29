@@ -1,12 +1,10 @@
 import { IProduct } from "./../Interface/index";
-import React from "react";
-import { render, screen } from "@testing-library/react";
 import Reducer from "./Reducer";
 
 const product: IProduct[] = [
     {
         id: 1,
-        category: "eletronics",
+        category: "electronics",
         description: "description",
         image: "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
         price: 123,

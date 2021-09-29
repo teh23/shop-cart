@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { IProduct } from './Interface'
-import { useCard } from './Logic/CardProvider'
+import { useCart } from './Logic/CartProvider'
 import Stars from './Stars'
 
 
@@ -14,7 +14,7 @@ const Product = ({
     rating,
     title,
 }: IProduct) => {
-    const { dispatch } = useCard()
+    const { dispatch } = useCart()
 
     const product = {
         id: id,

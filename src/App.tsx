@@ -7,8 +7,8 @@ import {
 import Category from "./components/Category";
 import { fetcher } from "./lib/fetcher";
 import Header from "./components/Header";
-import Card from "./components/Card";
-import CardProvider from "./components/Logic/CardProvider";
+import Card from "./components/Cart";
+import CardProvider from "./components/Logic/CartProvider";
 
 
 
