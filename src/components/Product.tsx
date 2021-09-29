@@ -1,19 +1,8 @@
 import React from 'react'
-import { useCard } from '../App'
-import Stars from './Stars'
 
-export interface IProduct {
-    category: string,
-    description: string,
-    id: number,
-    image: string,
-    price: number,
-    rating: {
-        rate: number,
-        count: number
-    },
-    title: string
-}
+import { IProduct } from './Interface'
+import { useCard } from './Logic/CardProvider'
+import Stars from './Stars'
 
 
 const Product = ({
@@ -26,6 +15,7 @@ const Product = ({
     title,
 }: IProduct) => {
     const { dispatch } = useCard()
+
     const product = {
         id: id,
         category: category,

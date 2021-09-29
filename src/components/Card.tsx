@@ -1,6 +1,8 @@
 import React from 'react'
-import { ICard, useCard } from '../App'
-import { IProduct } from './Product'
+
+import { ICard, IProduct } from './Interface'
+import { useCard } from './Logic/CardProvider'
+
 
 const Card = () => {
     const { card, dispatch } = useCard()
